@@ -1,0 +1,13 @@
+/.settings/
+/.project
+.*.swp
+/servers/*/apps
+/servers/*/logs
+/servers/*/workarea
+/servers/.pid
+/build/
+/servers/.classCache
+/target
+servers/gameon-pictureroom/resources
+.*~
+

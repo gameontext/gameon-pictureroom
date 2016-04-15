@@ -1,0 +1,4 @@
+rootProject.name = 'gameon-pictureroom'
+
+include 'pictureroom-app'
+include 'pictureroom-wlpcfg'
