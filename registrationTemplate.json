@@ -12,6 +12,6 @@
   },
   "connectionDetails":{
                        "type":"websocket",
-                       "target":"ws://WEBSOCKET_ENDPOINT/car/carRoom"
+                       "target":"ws://WEBSOCKET_ENDPOINT/rooms/pictureRoom"
   }
 }
