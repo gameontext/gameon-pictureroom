@@ -434,8 +434,10 @@ public class PictureRoom implements ServletContextListener {
         String examine = "/examine ";
         if(lowerContent.startsWith(examine)) {
             String item = lowerContent.substring(examine.length());
+            System.out.println("Finding portrait" + item);
             PictureRoomPicture pic = PictureRoomPicture.getInstance(item, item);
             EventBuilder.playerEvent(Collections.singletonList(session), userId, pic.getDescription(), null);
+            System.out.println("Sending content back to player");
             return;
         }
 
