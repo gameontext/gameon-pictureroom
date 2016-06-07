@@ -119,8 +119,10 @@ public class PictureRoom implements ServletContextListener {
     private final Set<Session> sessions = new CopyOnWriteArraySet<Session>();
     private final Map<String, String> exits = new HashMap<>();
     private final List<String> objects = new ArrayList<>();
+    private final Boolean registrationRequired;
 
     public PictureRoom() {
+        registrationRequired = Boolean.valueOf(System.getenv("REQUIRES_APP_REGISTRATION"));
         String url = System.getenv("HOSTNAME");
         try {
             url = "ws://" + InetAddress.getByName(System.getenv("HOSTNAME")).getHostAddress() +":9080/rooms/pictureRoom";
@@ -153,30 +155,32 @@ public class PictureRoom implements ServletContextListener {
      */
     @Override
     public final void contextInitialized(final ServletContextEvent e) {
+        if (registrationRequired) {
 
-        // check if we are already registered..
-        try {
-            configureSSL();
+            // check if we are already registered..
+            try {
+                configureSSL();
 
-            HttpURLConnection con = isAlreadyRegistered();
-            if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                //if the result was 200, then we found a room with this id & owner..
-                //which is either a previous registration by us, or another room with
-                //the same owner & roomname
-                //We won't register our room in this case, although we _could_ choose
-                //do do an update instead.. (we'd need to parse the json response, and
-                //collect the room id, then do a PUT request with our new data.. )
-                System.out.println("We are already registered, so updating with a PUT");
-                String json = getJSONResponse(con);
-                JsonArray array = Json.createReader(new StringReader(json)).readArray();
-                JsonString id = array.getJsonObject(0).getJsonString("_id");
-                register("PUT", registrationUrl + "/" + id.getString());
-            } else {
-                register("POST", registrationUrl);
+                HttpURLConnection con = isAlreadyRegistered();
+                if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    //if the result was 200, then we found a room with this id & owner..
+                    //which is either a previous registration by us, or another room with
+                    //the same owner & roomname
+                    //We won't register our room in this case, although we _could_ choose
+                    //do do an update instead.. (we'd need to parse the json response, and
+                    //collect the room id, then do a PUT request with our new data.. )
+                    System.out.println("We are already registered, so updating with a PUT");
+                    String json = getJSONResponse(con);
+                    JsonArray array = Json.createReader(new StringReader(json)).readArray();
+                    JsonString id = array.getJsonObject(0).getJsonString("_id");
+                    register("PUT", registrationUrl + "/" + id.getString());
+                } else {
+                    register("POST", registrationUrl);
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                throw new RuntimeException(ex);
             }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            throw new RuntimeException(ex);
         }
     }
     

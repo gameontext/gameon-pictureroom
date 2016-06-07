@@ -1,0 +1,17 @@
+{
+  "name":"PictureRoom",
+  "fullName":"A gallery of pictures",
+  "description":"There are a number of pictures on the wall, in fact it looks like a Rogue's Gallery - or could this be the GameOn! team ... ?",
+  "doors":{
+           "s":"A winding path leading off to the south",
+           "d":"A tunnel, leading down into the earth",
+           "e":"An overgrown road, covered in brambles",
+           "u":"A spiral set of stairs, leading upward into the ceiling",
+           "w":"A shiny metal door, with a bright red handle",
+           "n":"A Large doorway to the north"
+  },
+  "connectionDetails":{
+                       "type":"websocket",
+                       "target":"ws://WEBSOCKET_ENDPOINT/car/carRoom"
+  }
+}
