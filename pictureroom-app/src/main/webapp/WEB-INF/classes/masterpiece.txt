@@ -1,4 +1,4 @@
-<pre style='font-family: "Courier New", Courier, monospace; font-size: .25em;'>
+```
 ,,,,,,,:::::;;;;;;iiiiiiiiiiiii111111111111ii;;;;;;;:::::,,::;::;:,,,:::::::;i1tttttttttfi1tttttft111tttttttttttttttt1tf
 ,,,,,,:::::;;;;;;iiiiiiiiiiiiiiii1111111ti;::::,::,,,,,,::,,,::::,,,,,,,::,,:::;itttttttfi1tttttft111tttttttttttttttt11f
 ,,,,,,:::::;;;;;;iiiiiiiiiiiiiiii1111111t1;;:::::,,,,,,,:::,,,,,::,,,,.,,,,,,,,::;itttttfi1tttttft11itttttttttttttttt11t
@@ -59,5 +59,5 @@
 ;00000GCLfLGft1i1;18@@@@@@@88@@fiLif;L11L:tLLt1f;tt;tLf1ifLit11t1fGCC1t11t1LLtttL11fG088888GLttttt1ii:;11;:::;i11ii;;;;;
 f8000000CLffCft11i;t8@@@@@@@@@0iCC0GG8LffLGGCi1t:L1i0f;1,t1,f;:C;iLtL,t1:L;i1:ii1,tG008880GLftttt1ii;:ii;::;i11ii;;;iiii
 80GG0000GCf1tCffftt;f@@@@@@@@@80@@@8888888880ff1L0G00GCCCGCCGCCGLC00GLGCLGfLCftfLfC000880GCft1tt11ii:;:::;i11iiiiii11ii;
-</pre>
+```
 Sure looks like a master !
