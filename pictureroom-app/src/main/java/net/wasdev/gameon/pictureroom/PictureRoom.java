@@ -98,7 +98,7 @@ public class PictureRoom implements ServletContextListener {
     private static final String description = "There are a number of pictures on the wall, in fact it looks like a Rogue's Gallery - or could this be the GameOn! team ... ?";
     
     // for running against the real remote gameon.
-    //String registrationUrl = "https://game-on.org/map/v1/sites";
+    //String registrationUrl = "https://gameontext.org/map/v1/sites";
     //String endPointUrl = "ws://<ip and port of host that gameon can reach>/rooms/simpleRoom
 
     // for when running in a docker container with game-on all running
